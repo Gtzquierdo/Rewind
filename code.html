@@ -59,17 +59,58 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        // Call Hello World`
-                        function HelloWorld() {
-                        alert( "Hello World!" );
-                        }
+                        // Get the string from the page
+// Controller Function
+function getValue() {
+
+    document.getElementById("alert").classList.add("invisible");
+
+    let userString = document.getElementById("userString").value;
+    let revString = reverseString(userString);
+    displayString(revString);
+}
+
+// Reverse the string
+// Logic Function
+function reverseString(userString) {
+
+    let revString = [];
+
+    // Reverse the string using a for loop
+    for (let i = userString.length - 1; i >= 0; i--) {
+        
+        revString += userString[i];
+    }
+
+    return revString;
+
+}
+
+
+// Display the reversed string to the page
+// View Function
+function displayString(revString) {
+
+    // Write the message to the page
+    document.getElementById("msg").innerHTML = `Your string reversed is: ${revString}`;
+
+    // Turn on the alert box
+    document.getElementById("alert").classList.remove("invisible");
+
+}
+
+
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World."</p>
+                    <p>The Code is structured in functions.</p>
+                    <h5>function getValue</h5>
+                    <p>This is a controller function. Duties are to get the string from the page. The function also hides our alert until the last function is complete.</p>
+                    <h5>function reverseString</h5>
+                    <p>Logic function where we use a for loop to reverse the string that was given.</p>
+                    <h5>function displayString</h5>
+                    <p>View function where we write the reversed string to the page and the alert is visible to the user.</p>
                 </div>
             </div>
         </div>
